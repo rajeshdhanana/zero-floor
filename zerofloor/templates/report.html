@@ -1,0 +1,12 @@
+{% extends "admin/base_site.html" %}
+{% block extrahead %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+<button class="btn btn-success" onclick="hello()">CLICK ME</button>
+<script>
+    function hello(){
+        alert("Hello! You Passed!")
+    }
+</script>
+{% endblock %}
