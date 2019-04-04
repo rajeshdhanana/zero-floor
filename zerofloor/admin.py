@@ -8,8 +8,9 @@ from .models import ApartmentBankAccounts
 from .models import MonthlyDetails
 from .models import MonthlyCollections
 from .models import MonthlyExpenses
+from .models import VendorDetails
 from .models import Report
-from .forms import MonthlyCollectionsForm
+
 
 admin.site.site_header = "ZERO FLOOR";
 admin.site.site_title = "ZERO FLOOR";
@@ -49,6 +50,9 @@ admin.site.register(ExpenseType)
 admin.site.register(ApartmentBankAccounts)
 admin.site.register(MonthlyDetails)
 
+@admin.register(VendorDetails)
+class VendorDetailsAdmin(admin.ModelAdmin):
+    pass
 
 @admin.register(MonthlyCollections)
 class MonthlyCollectionsAdmin(admin.ModelAdmin):
@@ -57,4 +61,7 @@ class MonthlyCollectionsAdmin(admin.ModelAdmin):
 
         
 # admin.register(MonthlyCollections,MonthlyCollectionsAdmin)
-admin.site.register(MonthlyExpenses)
+@admin.register(MonthlyExpenses)
+class MonthlyExpensessAdmin(admin.ModelAdmin):
+    class Media:
+        js = ("monthlyCollections.js",)
